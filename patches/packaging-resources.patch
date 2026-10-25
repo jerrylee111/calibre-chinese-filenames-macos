@@ -1,0 +1,11 @@
+--- a/src/calibre/constants.py
++++ b/src/calibre/constants.py
+@@ -436,7 +436,7 @@
+     except ImportError:
+         pass
+     else:
+-        is_running_from_develop = running_in_develop_mode()
++        is_running_from_develop = False  # Packaged app: use the bundled prebuilt UI and web resources.
+ 
+ in_develop_mode = os.getenv('CALIBRE_ENABLE_DEVELOP_MODE') == '1'
+ if iswindows:

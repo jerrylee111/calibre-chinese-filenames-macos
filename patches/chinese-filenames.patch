@@ -1,0 +1,24 @@
+--- a/src/calibre/db/backend.py
++++ b/src/calibre/db/backend.py
+@@ -1774,8 +1774,8 @@
+         """
+         book_id = BOOK_ID_PATH_TEMPLATE.format(book_id)
+         l = self.PATH_LIMIT - (len(book_id) // 2) - 2
+-        author = ascii_filename(author)[:l]
+-        title = ascii_filename(title.lstrip())[:l].rstrip()
++        #author = ascii_filename(author)[:l]
++        #title = ascii_filename(title.lstrip())[:l].rstrip()
+         if not title:
+             title = 'Unknown'[:l]
+         try:
+@@ -1801,8 +1801,8 @@
+         l = (self.PATH_LIMIT - (extlen // 2) - 2) if iswindows else ((self.PATH_LIMIT - extlen - 2) // 2)
+         if l < 5:
+             raise ValueError(f'Extension length too long: {extlen}')
+-        author = ascii_filename(author)[:l]
+-        title = ascii_filename(title.lstrip())[:l].rstrip()
++        #author = ascii_filename(author)[:l]
++        #title = ascii_filename(title.lstrip())[:l].rstrip()
+         if not title:
+             title = 'Unknown'[:l]
+         name = title + ' - ' + author
